@@ -39,8 +39,22 @@ export async function POST(request: Request) {
     auth: { user: SMTP_USER, pass: SMTP_PASS },
   });
 
+  console.log(
+    `[register] sending via ${SMTP_HOST}:${SMTP_PORT ?? 587} as ${SMTP_USER} → ${CONTACT_TO}`
+  );
+
   try {
-    await transporter.sendMail({
+    await transporter.verify();
+  } catch (err) {
+    logSmtpError("SMTP connection/auth check failed", err);
+    return Response.json(
+      { message: "Could not send email right now. Please try again shortly." },
+      { status: 502 }
+    );
+  }
+
+  try {
+    const info = await transporter.sendMail({
       from: SMTP_FROM,
       to: CONTACT_TO,
       replyTo: undefined,
@@ -61,8 +75,20 @@ export async function POST(request: Request) {
         <p><strong>Purpose:</strong> ${escapeHtml(purpose)}</p>
       `,
     });
+
+    console.log(
+      `[register] sendMail resolved: messageId=${info.messageId} accepted=${JSON.stringify(info.accepted)} rejected=${JSON.stringify(info.rejected)} response=${info.response}`
+    );
+
+    if (info.accepted.length === 0 || info.rejected.length > 0) {
+      console.error("[register] SMTP server did not fully accept the message — check the recipient address and spam filtering.", info);
+      return Response.json(
+        { message: "Could not send email right now. Please try again shortly." },
+        { status: 502 }
+      );
+    }
   } catch (err) {
-    console.error("Failed to send registration email:", err);
+    logSmtpError("Failed to send registration email", err);
     return Response.json(
       { message: "Could not send email right now. Please try again shortly." },
       { status: 502 }
@@ -70,6 +96,17 @@ export async function POST(request: Request) {
   }
 
   return Response.json({ ok: true });
+}
+
+function logSmtpError(message: string, err: unknown) {
+  const e = err as { message?: string; code?: string; responseCode?: number; response?: string; command?: string };
+  console.error(`[register] ${message}:`, {
+    message: e?.message,
+    code: e?.code,
+    responseCode: e?.responseCode,
+    response: e?.response,
+    command: e?.command,
+  });
 }
 
 function escapeHtml(value: string) {
