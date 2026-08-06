@@ -1,26 +1,69 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: oklch(14.5% 0 0);
+  --surface: oklch(19.6% 0 0);
+  --foreground: oklch(100% 0 0);
+  --muted-foreground: oklch(79% 0 0);
+  --gold: oklch(73.5% 0.075 82);
+  --gold-soft: oklch(84% 0.05 82);
+  --border-hairline: oklch(100% 0 0 / 0.12);
+  --input-hairline: oklch(100% 0 0 / 0.16);
+  --radius: 0.25rem;
+  --gradient-veil: linear-gradient(
+    to bottom,
+    oklch(14.5% 0 0 / 0.78) 0%,
+    oklch(14.5% 0 0 / 0.42) 40%,
+    oklch(14.5% 0 0 / 0.92) 100%
+  );
+  --shadow-luxe: 0 30px 80px -40px oklch(0% 0 0 / 0.9);
+  --ease-luxe: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-muted-foreground: var(--muted-foreground);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-border-hairline: var(--border-hairline);
+  --color-input-hairline: var(--input-hairline);
+  --radius-luxe: var(--radius);
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--background);
+}
+
+/* thin gold scrollbar for horizontally-scrolling tracks */
+.scrollbar-gold {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) transparent;
+}
+.scrollbar-gold::-webkit-scrollbar {
+  height: 4px;
+}
+.scrollbar-gold::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

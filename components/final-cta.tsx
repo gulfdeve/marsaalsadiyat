@@ -1,0 +1,26 @@
+import Image from "next/image";
+import { finalCta } from "@/lib/content";
+import { Reveal } from "./reveal";
+import nightImg from "@/public/images/night.jpg";
+
+export function FinalCta() {
+  return (
+    <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden py-24">
+      <Image src={nightImg} alt="" fill aria-hidden className="object-cover" sizes="100vw" />
+      <div className="absolute inset-0" style={{ background: "var(--gradient-veil)" }} />
+
+      <Reveal className="relative z-10 mx-auto max-w-2xl px-6 text-center">
+        <h2 className="font-serif text-4xl leading-tight text-foreground sm:text-5xl">
+          {finalCta.title}
+        </h2>
+        <p className="mt-4 text-base leading-relaxed text-white/80">{finalCta.body}</p>
+        <a
+          href="#register"
+          className="mt-8 inline-block rounded-full bg-gold px-8 py-3.5 text-sm font-medium tracking-[0.15em] text-background transition-transform hover:scale-105"
+        >
+          REGISTER YOUR INTEREST
+        </a>
+      </Reveal>
+    </section>
+  );
+}
