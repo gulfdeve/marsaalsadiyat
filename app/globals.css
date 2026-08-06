@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: oklch(14.5% 0 0);
-  --surface: oklch(19.6% 0 0);
-  --foreground: oklch(100% 0 0);
-  --muted-foreground: oklch(79% 0 0);
-  --gold: oklch(73.5% 0.075 82);
-  --gold-soft: oklch(84% 0.05 82);
-  --border-hairline: oklch(100% 0 0 / 0.12);
-  --input-hairline: oklch(100% 0 0 / 0.16);
+  --background: oklch(100% 0 0);
+  --surface: oklch(97% 0 0);
+  --foreground: oklch(18% 0 0);
+  --muted-foreground: oklch(42% 0 0);
+  --gold: oklch(58% 0.1 82);
+  --gold-soft: oklch(68% 0.09 82);
+  --border-hairline: oklch(0% 0 0 / 0.1);
+  --input-hairline: oklch(0% 0 0 / 0.16);
   --radius: 0.25rem;
   --gradient-veil: linear-gradient(
     to bottom,

@@ -10,6 +10,7 @@ export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { scrollYProgress } = useScroll();
   const reduceMotion = useReducedMotion();
+  const onLight = scrolled || menuOpen;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
@@ -34,7 +35,7 @@ export function SiteHeader() {
         >
           <a
             href="#"
-            className="font-serif text-xl tracking-[0.25em] text-foreground"
+            className={`font-serif text-xl tracking-[0.25em] transition-colors ${onLight ? "text-foreground" : "text-white"}`}
           >
             MARSA
           </a>
@@ -44,7 +45,9 @@ export function SiteHeader() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-xs tracking-[0.15em] text-muted-foreground transition-colors hover:text-gold"
+                className={`text-xs tracking-[0.15em] transition-colors hover:text-gold ${
+                  scrolled ? "text-muted-foreground" : "text-white/80"
+                }`}
               >
                 {item.label}
               </a>
@@ -62,7 +65,9 @@ export function SiteHeader() {
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
-            className="flex h-11 w-11 items-center justify-center text-foreground lg:hidden"
+            className={`flex h-11 w-11 items-center justify-center transition-colors lg:hidden ${
+              onLight ? "text-foreground" : "text-white"
+            }`}
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>

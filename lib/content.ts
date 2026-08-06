@@ -13,7 +13,6 @@ export const hero = {
   eyebrow: "NEWLY ANNOUNCED · SAADIYAT ISLAND, ABU DHABI",
   titleLead: "Marsa Al Saadiyat",
   titleLine2: "Abu Dhabi",
-  titleGold: "by Aldar",
   body: "A landmark AED 100 billion waterfront destination on Saadiyat Island — a 6.4 million sqm masterplan of private mansions, luxury villas, waterfront apartments and branded residences along an 8km waterfront with Abu Dhabi's largest marina.",
 };
 
@@ -45,7 +44,7 @@ export const lifestyle = {
 export const masterplan = {
   eyebrow: "MASTERPLAN & COMMUNITY VISION",
   title: "An Integrated, Walkable Waterfront Community",
-  body: "Select a numbered point on the illustrative masterplan to explore each planned zone. Final layout is subject to official confirmation by Aldar.",
+  body: "Select a numbered point on the illustrative masterplan to explore each planned zone. Final layout is subject to official confirmation.",
   legend: [
     { icon: "square", label: "WATERFRONT RESIDENCES" },
     { icon: "triangle", label: "MARINA & YACHT CLUB" },
@@ -90,11 +89,11 @@ export const story = {
 export const invest = {
   eyebrow: "WHY INVEST IN MARSA AL SAADIYAT",
   title: "A Landmark Scale, In A Location That Cannot Be Replicated",
-  body: "Marsa Al Saadiyat combines Aldar's development track record with one of Abu Dhabi's most limited waterfront settings.",
+  body: "Marsa Al Saadiyat combines a landmark development track record with one of Abu Dhabi's most limited waterfront settings.",
   cards: [
     { icon: "gem", title: "Landmark AED 100 Billion Scale", body: "One of Abu Dhabi's most significant waterfront and mixed-use developments announced to date." },
     { icon: "anchor", title: "Prime Saadiyat Island Waterfront", body: "Positioned alongside Saadiyat's established cultural and residential district." },
-    { icon: "building-2", title: "Aldar As Master Developer", body: "Delivered by Abu Dhabi's leading listed real estate developer." },
+    { icon: "building-2", title: "Experienced Master Developer", body: "Delivered by an established, listed real estate developer." },
     { icon: "sparkles", title: "Limited Waterfront Land", body: "An 8km waterfront setting on an island with finite coastal frontage." },
     { icon: "users", title: "Diverse Residential Offering", body: "Mansions, villas, apartments and branded residences within one destination." },
     { icon: "compass", title: "Marina, Hospitality & Retail", body: "Abu Dhabi's largest marina, two luxury hotels and a waterfront promenade." },
@@ -120,13 +119,12 @@ export const connectivity = {
 export const timeline = {
   eyebrow: "REGISTRATION TIMELINE",
   title: "Where Marsa Al Saadiyat Stands Today",
-  body: "All dates below are expected and planned, subject to official confirmation by Aldar.",
+  body: "All dates below are expected and planned, subject to official confirmation.",
   phases: [
     { phase: "01", title: "Announced — 2026", body: "Project launch witnessed with an investment value of AED 100 billion." },
     { phase: "02", title: "Priority Registration — Open Now", body: "Register interest to receive project updates ahead of public launch." },
-    { phase: "03", title: "Infrastructure Works — Expected Q3 2026", body: "Enabling and infrastructure works expected to begin." },
-    { phase: "04", title: "First Residential Sales — Expected H2 2026", body: "First residential sales expected to launch." },
-    { phase: "05", title: "Future Phases — To Be Announced", body: "Further residential phases and details subject to future announcement." },
+    { phase: "03", title: "First Residential Sales — Expected H2 2026", body: "First residential sales expected to launch." },
+    { phase: "04", title: "Future Phases — To Be Announced", body: "Further residential phases and details subject to future announcement." },
   ],
 } as const;
 

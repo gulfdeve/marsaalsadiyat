@@ -30,7 +30,7 @@ export function StoryVideo() {
 
       <Reveal className="relative z-10 flex flex-col items-center px-6 text-center">
         <p className="text-xs tracking-[0.3em] text-gold">{story.eyebrow}</p>
-        <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground sm:text-5xl">
+        <h2 className="mt-4 font-serif text-4xl leading-tight text-white sm:text-5xl">
           {story.title}
         </h2>
         <button

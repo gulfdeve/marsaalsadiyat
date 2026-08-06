@@ -1,8 +1,6 @@
-import Image from "next/image";
 import { MapPin } from "lucide-react";
 import { connectivity } from "@/lib/content";
 import { Reveal } from "./reveal";
-import masterplanImg from "@/public/images/masterplan.jpg";
 
 export function Connectivity() {
   return (
@@ -35,12 +33,12 @@ export function Connectivity() {
         </div>
 
         <Reveal className="relative aspect-square overflow-hidden rounded-luxe lg:aspect-auto">
-          <Image
-            src={masterplanImg}
-            alt="Map of the island location"
-            fill
-            className="object-cover opacity-80 blur-xl"
-            sizes="(min-width: 1024px) 45vw, 100vw"
+          <iframe
+            title="Map of Saadiyat Island"
+            src="https://maps.google.com/maps?q=24.5302924,54.4451578&z=13&output=embed"
+            className="absolute inset-0 h-full w-full border-0"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
           />
         </Reveal>
       </div>

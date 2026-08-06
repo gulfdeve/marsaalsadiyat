@@ -10,7 +10,7 @@ export function FinalCta() {
       <div className="absolute inset-0" style={{ background: "var(--gradient-veil)" }} />
 
       <Reveal className="relative z-10 mx-auto max-w-2xl px-6 text-center">
-        <h2 className="font-serif text-4xl leading-tight text-foreground sm:text-5xl">
+        <h2 className="font-serif text-4xl leading-tight text-white sm:text-5xl">
           {finalCta.title}
         </h2>
         <p className="mt-4 text-base leading-relaxed text-white/80">{finalCta.body}</p>

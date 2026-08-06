@@ -7,7 +7,7 @@ import { Plus } from "lucide-react";
 import { masterplan } from "@/lib/content";
 import { iconMap } from "@/lib/icon-map";
 import { Reveal } from "./reveal";
-import masterplanImg from "@/public/images/masterplan.jpg";
+import masterplanImg from "@/public/marsa-al-saadiyat-g1.avif";
 
 export function Masterplan() {
   const [active, setActive] = useState<string | null>(null);

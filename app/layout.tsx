@@ -16,7 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Marsa Al Saadiyat Abu Dhabi by Aldar | Waterfront Residences",
+  title: "Marsa Al Saadiyat Abu Dhabi | Waterfront Residences",
   description:
     "A landmark AED 100 billion waterfront destination on Saadiyat Island — a 6.4 million sqm masterplan of private mansions, luxury villas, waterfront apartments and branded residences along an 8km waterfront with Abu Dhabi's largest marina.",
 };

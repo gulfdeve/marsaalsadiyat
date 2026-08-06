@@ -41,11 +41,11 @@ export function Hero() {
           initial={reduceMotion ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="mt-6 font-serif text-5xl leading-[1.05] tracking-[-0.02em] text-foreground sm:text-6xl md:text-7xl lg:text-[5.1rem]"
+          className="mt-6 font-serif text-5xl leading-[1.05] tracking-[-0.02em] text-white sm:text-6xl md:text-7xl lg:text-[5.1rem]"
         >
           {hero.titleLead}
           <br />
-          {hero.titleLine2} <span className="italic text-gold">{hero.titleGold}</span>
+          {hero.titleLine2}
         </motion.h1>
 
         <motion.p
@@ -71,7 +71,7 @@ export function Hero() {
           </a>
           <a
             href="#story"
-            className="flex items-center gap-2 rounded-full border border-border-hairline bg-white/5 px-8 py-3.5 text-sm font-medium tracking-[0.15em] text-foreground backdrop-blur-sm transition-colors hover:bg-white/10"
+            className="flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-8 py-3.5 text-sm font-medium tracking-[0.15em] text-white backdrop-blur-sm transition-colors hover:bg-white/10"
           >
             <Play size={14} fill="currentColor" /> WATCH VIDEO
           </a>
