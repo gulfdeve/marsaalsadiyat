@@ -9,18 +9,6 @@ export function SiteFooter() {
           {footer.brand}
         </span>
 
-        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs tracking-[0.1em] text-muted-foreground">
-          <a href={`mailto:${footer.email}`} className="hover:text-gold">
-            {footer.email}
-          </a>
-          <a href={footer.whatsapp} target="_blank" rel="noopener noreferrer" className="hover:text-gold">
-            WhatsApp
-          </a>
-          <a href="#" className="hover:text-gold">
-            Privacy Policy
-          </a>
-        </div>
-
         <div className="flex items-center gap-4">
           <a href="#" aria-label="Social link" className="text-muted-foreground hover:text-gold">
             <Share2 size={18} strokeWidth={1.5} />

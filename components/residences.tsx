@@ -1,11 +1,25 @@
 import Image from "next/image";
 import { residences } from "@/lib/content";
 import { Reveal } from "./reveal";
-import heroImg from "@/public/images/hero.jpg";
-import lifestyleImg from "@/public/images/lifestyle.jpg";
-import nightImg from "@/public/images/night.jpg";
+import mansionsImg from "@/public/more_images/PRIVATE MANSIONS.webp";
+import villasImg from "@/public/more_images/LUXURY VILLAS.jpg.jpeg";
+import apartmentsImg from "@/public/more_images/WATERFRONT APARTMENTS.jpg.jpeg";
+import brandedImg from "@/public/more_images/BRANDED RESIDENCES.jpg.jpeg";
+import beachesImg from "@/public/more_images/BEACHES.webp";
+import diningImg from "@/public/more_images/PROMENADE DINING.webp";
+import marinaImg from "@/public/more_images/MARINA & YACHT CLUB.jpg.jpeg";
+import parkImg from "@/public/more_images/CENTRAL PARK.webp";
 
-const images = { hero: heroImg, lifestyle: lifestyleImg, night: nightImg } as const;
+const images = {
+  mansions: mansionsImg,
+  villas: villasImg,
+  apartments: apartmentsImg,
+  branded: brandedImg,
+  beaches: beachesImg,
+  dining: diningImg,
+  marina: marinaImg,
+  park: parkImg,
+} as const;
 
 export function Residences() {
   return (
@@ -27,17 +41,13 @@ export function Residences() {
               tile.span === "tall" ? "sm:row-span-2 aspect-[3/4]" : "aspect-square"
             }`}
           >
-            {tile.image ? (
-              <Image
-                src={images[tile.image as keyof typeof images]}
-                alt={tile.label}
-                fill
-                className="object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110"
-                sizes="(min-width: 1024px) 25vw, 50vw"
-              />
-            ) : (
-              <div className="absolute inset-0 bg-gradient-to-br from-surface to-background" />
-            )}
+            <Image
+              src={images[tile.id as keyof typeof images]}
+              alt={tile.label}
+              fill
+              className="object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110"
+              sizes="(min-width: 1024px) 25vw, 50vw"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
             <span className="absolute bottom-4 left-4 text-xs font-medium tracking-[0.15em] text-foreground">
               {tile.label}

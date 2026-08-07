@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform, useReducedMotion } from "motion/react"
 import { useRef } from "react";
 import { Play } from "lucide-react";
 import { hero } from "@/lib/content";
-import heroImg from "@/public/images/hero.jpg";
+import heroImg from "@/public/TOP PAGE.webp";
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);

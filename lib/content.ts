@@ -69,14 +69,14 @@ export const residences = {
   title: "Four Ways To Call The Waterfront Home",
   body: "Private mansions, luxury villas, waterfront apartments and branded residences. Layouts, sizes and pricing have not yet been released. Illustrative imagery.",
   tiles: [
-    { id: "mansions", label: "PRIVATE MANSIONS", image: "hero", span: "tall" },
-    { id: "villas", label: "LUXURY VILLAS", image: "night", span: "normal" },
-    { id: "apartments", label: "WATERFRONT APARTMENTS", image: "lifestyle", span: "tall" },
-    { id: "branded", label: "BRANDED RESIDENCES", image: null, span: "normal" },
-    { id: "beaches", label: "BEACHES", image: null, span: "normal" },
-    { id: "dining", label: "PROMENADE DINING", image: null, span: "normal" },
-    { id: "marina", label: "MARINA & YACHT CLUB", image: "hero", span: "normal" },
-    { id: "park", label: "CENTRAL PARK", image: "night", span: "normal" },
+    { id: "mansions", label: "PRIVATE MANSIONS", span: "tall" },
+    { id: "villas", label: "LUXURY VILLAS", span: "normal" },
+    { id: "apartments", label: "WATERFRONT APARTMENTS", span: "tall" },
+    { id: "branded", label: "BRANDED RESIDENCES", span: "normal" },
+    { id: "beaches", label: "BEACHES", span: "normal" },
+    { id: "dining", label: "PROMENADE DINING", span: "normal" },
+    { id: "marina", label: "MARINA & YACHT CLUB", span: "normal" },
+    { id: "park", label: "CENTRAL PARK", span: "normal" },
   ],
 } as const;
 
@@ -159,6 +159,4 @@ export const finalCta = {
 
 export const footer = {
   brand: "MARSA",
-  email: "enquiries@marsaalsaadiyat.ae",
-  whatsapp: "https://wa.me/971500000000",
 };
