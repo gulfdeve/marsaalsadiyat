@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "Marsa Al Saadiyat Abu Dhabi | Waterfront Residences",
   description:
     "A landmark AED 100 billion waterfront destination on Saadiyat Island — a 6.4 million sqm masterplan of private mansions, luxury villas, waterfront apartments and branded residences along an 8km waterfront with Abu Dhabi's largest marina.",
+  verification: {
+    google: "5i__v5eSB6Irgdza5L258pmTvrAAMOpr0yu07ail8HI",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
