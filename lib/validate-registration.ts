@@ -3,6 +3,7 @@
 // the client-side checks were bypassed.
 
 import { registerForm } from "./content";
+import { DIAL_CODES } from "./phone-codes";
 
 export interface RegistrationPayload {
   name: string;
@@ -14,7 +15,6 @@ export interface RegistrationPayload {
 
 export type RegistrationErrors = Partial<Record<keyof RegistrationPayload, string>>;
 
-const PHONE_RE = /^[+\d][\d\s()-]{6,19}$/;
 const MAX_FIELD_LENGTH = 120;
 
 export function validateRegistration(data: unknown): RegistrationErrors | null {
@@ -30,7 +30,13 @@ export function validateRegistration(data: unknown): RegistrationErrors | null {
 
   const phone = typeof d.phone === "string" ? d.phone.trim() : "";
   if (!phone) errors.phone = "Phone number is required.";
-  else if (!PHONE_RE.test(phone)) errors.phone = "Enter a valid phone number.";
+  else {
+    const dial = DIAL_CODES.find((code) => phone.startsWith(code));
+    const nationalNumber = dial ? phone.slice(dial.length) : "";
+    if (!dial || !/^\d{6,14}$/.test(nationalNumber)) {
+      errors.phone = "Enter a valid phone number.";
+    }
+  }
 
   const country = typeof d.country === "string" ? d.country.trim() : "";
   if (!country) errors.country = "Country is required.";

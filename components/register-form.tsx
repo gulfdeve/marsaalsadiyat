@@ -1,15 +1,27 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useId, useState, type FormEvent } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { registerForm } from "@/lib/content";
+import { PHONE_COUNTRIES } from "@/lib/phone-codes";
 import { validateRegistration, type RegistrationErrors } from "@/lib/validate-registration";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
+function resolveDialCode(input: string): string | null {
+  const trimmed = input.trim().toLowerCase();
+  if (!trimmed) return null;
+  const match = PHONE_COUNTRIES.find(
+    (c) => c.dial === input.trim() || c.name.toLowerCase() === trimmed
+  );
+  return match?.dial ?? null;
+}
+
 export function RegisterForm() {
+  const dialListId = useId();
   const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
+  const [phoneCode, setPhoneCode] = useState("+971");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [country, setCountry] = useState("");
   const [budget, setBudget] = useState("");
   const [purpose, setPurpose] = useState("");
@@ -19,7 +31,7 @@ export function RegisterForm() {
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    const payload = { name, phone, country, budget, purpose };
+    const payload = { name, phone: `${phoneCode}${phoneNumber}`, country, budget, purpose };
     const validationErrors = validateRegistration(payload);
     if (validationErrors) {
       setErrors(validationErrors);
@@ -73,7 +85,41 @@ export function RegisterForm() {
       />
 
       <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
-        <Field label="PHONE NUMBER" value={phone} onChange={setPhone} error={errors.phone} type="tel" autoComplete="tel" />
+        <div>
+          <label className="block text-[11px] tracking-[0.2em] text-muted-foreground">PHONE NUMBER</label>
+          <div className="mt-2 flex items-stretch gap-2 border-b border-input-hairline transition-colors focus-within:border-gold">
+            <input
+              list={dialListId}
+              value={phoneCode}
+              onChange={(e) => setPhoneCode(e.target.value)}
+              onBlur={() => {
+                const resolved = resolveDialCode(phoneCode);
+                if (resolved) setPhoneCode(resolved);
+              }}
+              aria-label="Country code — type to search by country or code"
+              placeholder="+971"
+              className="w-16 shrink-0 bg-transparent py-2.5 text-base text-foreground outline-none transition-[width] duration-200 focus:w-44"
+            />
+            <datalist id={dialListId}>
+              {PHONE_COUNTRIES.map((c) => (
+                <option key={c.iso2} value={c.dial}>
+                  {c.name}
+                </option>
+              ))}
+            </datalist>
+            <input
+              type="tel"
+              inputMode="numeric"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value.replace(/\D/g, ""))}
+              autoComplete="tel-national"
+              aria-invalid={Boolean(errors.phone)}
+              placeholder="50 000 0000"
+              className="w-full min-w-0 bg-transparent py-2.5 text-base text-foreground outline-none placeholder:text-muted-foreground/60"
+            />
+          </div>
+          {errors.phone && <p className="mt-1.5 text-xs text-red-400">{errors.phone}</p>}
+        </div>
         <Field label="COUNTRY" value={country} onChange={setCountry} error={errors.country} autoComplete="country-name" />
       </div>
 

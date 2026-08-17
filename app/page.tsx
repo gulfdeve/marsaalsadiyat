@@ -12,10 +12,12 @@ import { Amenities } from "@/components/amenities";
 import { RegisterSection } from "@/components/register-section";
 import { FinalCta } from "@/components/final-cta";
 import { SiteFooter } from "@/components/site-footer";
+import { RegisterPopup } from "@/components/register-popup";
 
 export default function Home() {
   return (
     <>
+      <RegisterPopup />
       <SiteHeader />
       <main className="flex-1">
         <Hero />

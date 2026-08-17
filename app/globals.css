@@ -57,6 +57,36 @@ body {
   border-radius: 999px;
 }
 
+.popup-dialog {
+  opacity: 0;
+  transform: scale(0.96);
+  transition:
+    opacity 200ms var(--ease-luxe),
+    transform 200ms var(--ease-luxe),
+    overlay 200ms allow-discrete,
+    display 200ms allow-discrete;
+}
+.popup-dialog[open] {
+  opacity: 1;
+  transform: scale(1);
+}
+.popup-dialog::backdrop {
+  opacity: 0;
+  transition: opacity 200ms var(--ease-luxe), overlay 200ms allow-discrete, display 200ms allow-discrete;
+}
+.popup-dialog[open]::backdrop {
+  opacity: 0.8;
+}
+@starting-style {
+  .popup-dialog[open] {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  .popup-dialog[open]::backdrop {
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

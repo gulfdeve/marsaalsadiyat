@@ -6,7 +6,7 @@ import { registerForm } from "./content";
 
 const valid: RegistrationPayload = {
   name: "Jane Doe",
-  phone: "+971 50 000 0000",
+  phone: "+971501234567",
   country: "United Arab Emirates",
   budget: registerForm.budgets[0],
   purpose: registerForm.purposes[0],
@@ -16,6 +16,14 @@ console.assert(validateRegistration(valid) === null, "valid payload should pass"
 console.assert(validateRegistration({ ...valid, name: "" })?.name !== undefined, "missing name should fail");
 console.assert(validateRegistration({ ...valid, phone: "" })?.phone !== undefined, "missing phone should fail");
 console.assert(validateRegistration({ ...valid, phone: "abc" })?.phone !== undefined, "malformed phone should fail");
+console.assert(
+  validateRegistration({ ...valid, phone: "+999501234567" })?.phone !== undefined,
+  "unknown dial code should fail"
+);
+console.assert(
+  validateRegistration({ ...valid, phone: "+97150" })?.phone !== undefined,
+  "too-short national number should fail"
+);
 console.assert(validateRegistration({ ...valid, country: "" })?.country !== undefined, "missing country should fail");
 console.assert(
   validateRegistration({ ...valid, budget: "AED 999M" })?.budget !== undefined,
