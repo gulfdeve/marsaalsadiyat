@@ -3,7 +3,9 @@
 // the client-side checks were bypassed.
 
 import { registerForm } from "./content";
-import { DIAL_CODES } from "./phone-codes";
+import { DIAL_CODES, PHONE_COUNTRIES } from "./phone-codes";
+
+const COUNTRY_NAMES = new Set(PHONE_COUNTRIES.map((c) => c.name));
 
 export interface RegistrationPayload {
   name: string;
@@ -40,7 +42,7 @@ export function validateRegistration(data: unknown): RegistrationErrors | null {
 
   const country = typeof d.country === "string" ? d.country.trim() : "";
   if (!country) errors.country = "Country is required.";
-  else if (country.length > MAX_FIELD_LENGTH) errors.country = "Country is too long.";
+  else if (!COUNTRY_NAMES.has(country)) errors.country = "Select a valid country.";
 
   const budget = typeof d.budget === "string" ? d.budget : "";
   if (!budget) errors.budget = "Select an investment budget.";
