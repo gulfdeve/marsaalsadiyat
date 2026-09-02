@@ -44,6 +44,7 @@ export function RegisterForm() {
         return;
       }
       setStatus("success");
+      window.dataLayer?.push({ event: "generate_lead" });
     } catch {
       setStatus("error");
       setServerMessage("Network error. Please try again.");

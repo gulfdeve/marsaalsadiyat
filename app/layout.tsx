@@ -42,6 +42,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-KDTM3DZM');`,
         }}
       />
+      <Script
+        id="gtag-js"
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-4869J8EZ7M"
+      />
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-4869J8EZ7M');`,
+        }}
+      />
       <body className="min-h-full flex flex-col bg-background font-sans text-foreground">
         <noscript>
           <iframe
