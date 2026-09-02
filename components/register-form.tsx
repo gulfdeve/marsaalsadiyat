@@ -45,6 +45,9 @@ export function RegisterForm() {
       }
       setStatus("success");
       window.dataLayer?.push({ event: "generate_lead" });
+      window.gtag?.("event", "conversion", {
+        send_to: "AW-11256119676/BtDtCJ3Ft-wcEPyCq_cp",
+      });
     } catch {
       setStatus("error");
       setServerMessage("Network error. Please try again.");

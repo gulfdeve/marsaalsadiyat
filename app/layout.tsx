@@ -54,7 +54,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           __html: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-4869J8EZ7M');`,
+gtag('config', 'G-4869J8EZ7M');
+gtag('config', 'AW-11256119676');`,
         }}
       />
       <body className="min-h-full flex flex-col bg-background font-sans text-foreground">
