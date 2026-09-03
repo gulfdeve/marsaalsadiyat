@@ -83,7 +83,6 @@ export const residences = {
 export const story = {
   eyebrow: "THE STORY",
   title: "Experience Marsa Al Saadiyat",
-  videoLabel: "VIDEO SLOT",
 };
 
 export const invest = {

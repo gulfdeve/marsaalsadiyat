@@ -41,7 +41,6 @@ export function StoryVideo() {
         >
           <Play size={22} fill="currentColor" />
         </button>
-        <p className="mt-4 text-xs tracking-[0.2em] text-white/70">{story.videoLabel}</p>
       </Reveal>
 
       <AnimatePresence>
@@ -63,18 +62,22 @@ export function StoryVideo() {
               exit={{ opacity: 0, scale: 0.96 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative aspect-video w-full max-w-3xl rounded-luxe border border-border-hairline bg-surface"
+              className="relative aspect-video max-h-[85vh] w-full overflow-hidden rounded-luxe border border-border-hairline bg-surface"
             >
               <button
                 onClick={close}
                 aria-label="Close video"
-                className="absolute -top-12 right-0 flex h-10 w-10 items-center justify-center text-foreground"
+                className="absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-background/70 text-foreground hover:bg-background"
               >
                 <X size={22} />
               </button>
-              <div className="flex h-full w-full items-center justify-center text-xs tracking-[0.2em] text-muted-foreground">
-                {story.videoLabel}
-              </div>
+              <video
+                src="/Saadiyat Island Video Final.mp4"
+                controls
+                autoPlay
+                muted
+                className="h-full w-full rounded-luxe object-contain"
+              />
             </motion.div>
           </motion.div>
         )}
