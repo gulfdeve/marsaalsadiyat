@@ -32,6 +32,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${playfair.variable} ${inter.variable} h-full antialiased`}
     >
       <Script
+        id="contentsquare-script"
+        strategy="beforeInteractive"
+        async
+        src="https://t.contentsquare.net/uxa/b2116e26094a7.js"
+      />
+      <Script
         id="gtm-script"
         strategy="beforeInteractive"
         dangerouslySetInnerHTML={{
