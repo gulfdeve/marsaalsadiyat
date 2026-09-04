@@ -72,7 +72,7 @@ export function StoryVideo() {
                 <X size={22} />
               </button>
               <video
-                src="/Saadiyat Island Video Final.mp4"
+                src="/Saadiyat Island New Video girl.mp4"
                 controls
                 autoPlay
                 muted
