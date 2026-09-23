@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform, useReducedMotion } from "motion/react"
 import { useRef } from "react";
 import { Play } from "lucide-react";
 import { useSiteContent } from "@/components/site-content-provider";
-import heroImg from "@/public/waterfront-residence-night-aerial.webp";
+import heroImg from "@/public/TOP PAGE.webp";
 
 export function Hero() {
   const { hero } = useSiteContent();
