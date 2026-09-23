@@ -1,8 +1,9 @@
-import { invest } from "@/lib/content";
+import { getSiteContent } from "@/lib/content";
 import { iconMap } from "@/lib/icon-map";
 import { Reveal } from "./reveal";
 
-export function Invest() {
+export async function Invest() {
+  const { invest } = await getSiteContent();
   return (
     <section id="invest" className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
       <Reveal className="mx-auto max-w-3xl text-center">
@@ -15,7 +16,7 @@ export function Invest() {
 
       <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-luxe border border-border-hairline bg-border-hairline sm:grid-cols-2 lg:grid-cols-3">
         {invest.cards.map((card, i) => {
-          const Icon = iconMap[card.icon];
+          const Icon = iconMap[card.icon] ?? iconMap.gem;
           return (
             <Reveal key={card.title} delay={(i % 3) * 0.08} className="bg-surface p-8">
               <Icon className="text-gold" size={22} strokeWidth={1.5} />

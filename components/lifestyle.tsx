@@ -1,9 +1,10 @@
 import Image from "next/image";
-import { lifestyle } from "@/lib/content";
+import { getSiteContent } from "@/lib/content";
 import { Reveal } from "./reveal";
 import lifestyleImg from "@/public/images/lifestyle.jpg";
 
-export function Lifestyle() {
+export async function Lifestyle() {
+  const { lifestyle } = await getSiteContent();
   return (
     <section id="lifestyle" className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">

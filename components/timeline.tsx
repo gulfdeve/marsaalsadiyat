@@ -1,7 +1,8 @@
-import { timeline } from "@/lib/content";
+import { getSiteContent } from "@/lib/content";
 import { Reveal } from "./reveal";
 
-export function Timeline() {
+export async function Timeline() {
+  const { timeline } = await getSiteContent();
   return (
     <section className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
       <Reveal>

@@ -1,9 +1,10 @@
-import { vision } from "@/lib/content";
+import { getSiteContent } from "@/lib/content";
 import { iconMap } from "@/lib/icon-map";
 import { Reveal } from "./reveal";
 import { StatCounter } from "./stat-counter";
 
-export function Vision() {
+export async function Vision() {
+  const { vision } = await getSiteContent();
   return (
     <section id="vision" className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
       <Reveal className="mx-auto max-w-3xl text-center">
@@ -16,7 +17,7 @@ export function Vision() {
 
       <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-luxe border border-border-hairline bg-border-hairline sm:grid-cols-2 lg:grid-cols-5">
         {vision.stats.map((stat, i) => {
-          const Icon = iconMap[stat.icon];
+          const Icon = iconMap[stat.icon] ?? iconMap.gem;
           return (
             <Reveal
               key={stat.caption}

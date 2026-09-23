@@ -4,10 +4,11 @@ import Image from "next/image";
 import { motion, useScroll, useTransform, useReducedMotion } from "motion/react";
 import { useRef } from "react";
 import { Play } from "lucide-react";
-import { hero } from "@/lib/content";
-import heroImg from "@/public/TOP PAGE.webp";
+import { useSiteContent } from "@/components/site-content-provider";
+import heroImg from "@/public/waterfront-residence-night-aerial.webp";
 
 export function Hero() {
+  const { hero } = useSiteContent();
   const ref = useRef<HTMLElement>(null);
   const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });

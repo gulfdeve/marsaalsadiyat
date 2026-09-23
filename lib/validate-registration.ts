@@ -2,7 +2,7 @@
 // treats this as a trust boundary check, not a UX nicety — it must run even if
 // the client-side checks were bypassed.
 
-import { registerForm } from "./content";
+import { defaultSiteContent } from "./site-content";
 import { DIAL_CODES, PHONE_COUNTRIES } from "./phone-codes";
 
 const COUNTRY_NAMES = new Set(PHONE_COUNTRIES.map((c) => c.name));
@@ -19,7 +19,12 @@ export type RegistrationErrors = Partial<Record<keyof RegistrationPayload, strin
 
 const MAX_FIELD_LENGTH = 120;
 
-export function validateRegistration(data: unknown): RegistrationErrors | null {
+export function validateRegistration(
+  data: unknown,
+  allowed: { budgets?: readonly string[]; purposes?: readonly string[] } = {},
+): RegistrationErrors | null {
+  const budgets = allowed.budgets ?? defaultSiteContent.registerForm.budgets;
+  const purposes = allowed.purposes ?? defaultSiteContent.registerForm.purposes;
   if (typeof data !== "object" || data === null) {
     return { name: "Invalid submission." };
   }
@@ -46,13 +51,13 @@ export function validateRegistration(data: unknown): RegistrationErrors | null {
 
   const budget = typeof d.budget === "string" ? d.budget : "";
   if (!budget) errors.budget = "Select an investment budget.";
-  else if (!(registerForm.budgets as readonly string[]).includes(budget)) {
+  else if (!budgets.includes(budget)) {
     errors.budget = "Select a valid investment budget.";
   }
 
   const purpose = typeof d.purpose === "string" ? d.purpose : "";
   if (!purpose) errors.purpose = "Select a purpose.";
-  else if (!(registerForm.purposes as readonly string[]).includes(purpose)) {
+  else if (!purposes.includes(purpose)) {
     errors.purpose = "Select a valid purpose.";
   }
 

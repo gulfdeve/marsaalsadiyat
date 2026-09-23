@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import { getSiteContent } from "@/lib/content";
 import { validateRegistration } from "@/lib/validate-registration";
 
 export async function POST(request: Request) {
@@ -9,7 +10,11 @@ export async function POST(request: Request) {
     return Response.json({ message: "Invalid request body." }, { status: 400 });
   }
 
-  const errors = validateRegistration(body);
+  const { registerForm } = await getSiteContent();
+  const errors = validateRegistration(body, {
+    budgets: registerForm.budgets,
+    purposes: registerForm.purposes,
+  });
   if (errors) {
     return Response.json({ message: "Please check the form and try again.", errors }, { status: 400 });
   }

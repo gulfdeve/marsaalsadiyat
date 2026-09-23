@@ -2,14 +2,14 @@
 // run manually with `npx tsx lib/validate-registration.check.ts`.
 
 import { validateRegistration, type RegistrationPayload } from "./validate-registration";
-import { registerForm } from "./content";
+import { defaultSiteContent } from "./site-content";
 
 const valid: RegistrationPayload = {
   name: "Jane Doe",
   phone: "+971501234567",
   country: "United Arab Emirates",
-  budget: registerForm.budgets[0],
-  purpose: registerForm.purposes[0],
+  budget: defaultSiteContent.registerForm.budgets[0],
+  purpose: defaultSiteContent.registerForm.purposes[0],
 };
 
 console.assert(validateRegistration(valid) === null, "valid payload should pass");

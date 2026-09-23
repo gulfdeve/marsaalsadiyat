@@ -4,11 +4,12 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { Play, X } from "lucide-react";
-import { story } from "@/lib/content";
+import { useSiteContent } from "@/components/site-content-provider";
 import { Reveal } from "./reveal";
 import nightImg from "@/public/images/night.jpg";
 
 export function StoryVideo() {
+  const { story } = useSiteContent();
   const [open, setOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
 

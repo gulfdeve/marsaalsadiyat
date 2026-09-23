@@ -1,10 +1,11 @@
 import Image from "next/image";
-import { registerForm } from "@/lib/content";
+import { getSiteContent } from "@/lib/content";
 import { Reveal } from "./reveal";
 import { RegisterForm } from "./register-form";
 import heroImg from "@/public/images/hero.jpg";
 
-export function RegisterSection() {
+export async function RegisterSection() {
+  const { registerForm } = await getSiteContent();
   return (
     <section id="register" className="relative min-h-[600px] overflow-hidden py-24 sm:py-32">
       <Image

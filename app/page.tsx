@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { SiteHeader } from "@/components/site-header";
 import { Hero } from "@/components/hero";
 import { Vision } from "@/components/vision";
@@ -13,10 +14,22 @@ import { RegisterSection } from "@/components/register-section";
 import { FinalCta } from "@/components/final-cta";
 import { SiteFooter } from "@/components/site-footer";
 import { RegisterPopup } from "@/components/register-popup";
+import { SiteContentProvider } from "@/components/site-content-provider";
+import { getSiteContent } from "@/lib/content";
 
-export default function Home() {
+export async function generateMetadata(): Promise<Metadata> {
+  const { meta } = await getSiteContent();
+  return {
+    title: meta.title,
+    description: meta.description,
+  };
+}
+
+export default async function Home() {
+  const content = await getSiteContent();
+
   return (
-    <>
+    <SiteContentProvider content={content}>
       <RegisterPopup />
       <SiteHeader />
       <main className="flex-1">
@@ -34,6 +47,6 @@ export default function Home() {
         <FinalCta />
       </main>
       <SiteFooter />
-    </>
+    </SiteContentProvider>
   );
 }

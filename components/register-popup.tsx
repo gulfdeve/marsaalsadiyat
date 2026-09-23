@@ -2,13 +2,14 @@
 
 import { useEffect, useRef } from "react";
 import { X } from "lucide-react";
-import { registerForm } from "@/lib/content";
+import { useSiteContent } from "@/components/site-content-provider";
 import { RegisterForm } from "./register-form";
 
 const SEEN_KEY = "register-popup-seen";
 const SHOW_DELAY_MS = 1200;
 
 export function RegisterPopup() {
+  const { registerForm } = useSiteContent();
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {

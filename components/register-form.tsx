@@ -4,13 +4,14 @@ import { useState, type FormEvent } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import IntlTelInput from "@intl-tel-input/react";
 import "intl-tel-input/styles";
-import { registerForm } from "@/lib/content";
+import { useSiteContent } from "@/components/site-content-provider";
 import { PHONE_COUNTRIES } from "@/lib/phone-codes";
 import { validateRegistration, type RegistrationErrors } from "@/lib/validate-registration";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
 export function RegisterForm() {
+  const { registerForm } = useSiteContent();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [country, setCountry] = useState("");
@@ -23,7 +24,10 @@ export function RegisterForm() {
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     const payload = { name, phone, country, budget, purpose };
-    const validationErrors = validateRegistration(payload);
+    const validationErrors = validateRegistration(payload, {
+      budgets: registerForm.budgets,
+      purposes: registerForm.purposes,
+    });
     if (validationErrors) {
       setErrors(validationErrors);
       return;

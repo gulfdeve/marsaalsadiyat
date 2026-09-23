@@ -1,8 +1,9 @@
 import { Landmark } from "lucide-react";
-import { amenities } from "@/lib/content";
+import { getSiteContent } from "@/lib/content";
 import { Reveal } from "./reveal";
 
-export function Amenities() {
+export async function Amenities() {
+  const { amenities } = await getSiteContent();
   return (
     <section className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
       <Reveal className="mx-auto max-w-3xl text-center">

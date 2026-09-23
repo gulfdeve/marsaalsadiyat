@@ -1,9 +1,10 @@
 import Image from "next/image";
-import { finalCta } from "@/lib/content";
+import { getSiteContent } from "@/lib/content";
 import { Reveal } from "./reveal";
 import nightImg from "@/public/images/night.jpg";
 
-export function FinalCta() {
+export async function FinalCta() {
+  const { finalCta } = await getSiteContent();
   return (
     <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden py-24">
       <Image src={nightImg} alt="" fill aria-hidden className="object-cover" sizes="100vw" />

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { residences } from "@/lib/content";
+import { getSiteContent } from "@/lib/content";
 import { Reveal } from "./reveal";
 import mansionsImg from "@/public/more_images/PRIVATE MANSIONS.webp";
 import villasImg from "@/public/more_images/LUXURY VILLAS.jpg.jpeg";
@@ -21,7 +21,8 @@ const images = {
   park: parkImg,
 } as const;
 
-export function Residences() {
+export async function Residences() {
+  const { residences } = await getSiteContent();
   return (
     <section id="residences" className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
       <Reveal className="mx-auto max-w-3xl text-center">
@@ -41,13 +42,17 @@ export function Residences() {
               tile.span === "tall" ? "sm:row-span-2 aspect-[3/4]" : "aspect-square"
             }`}
           >
-            <Image
-              src={images[tile.id as keyof typeof images]}
-              alt={tile.label}
-              fill
-              className="object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110"
-              sizes="(min-width: 1024px) 25vw, 50vw"
-            />
+            {images[tile.id as keyof typeof images] ? (
+              <Image
+                src={images[tile.id as keyof typeof images]}
+                alt={tile.label}
+                fill
+                className="object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110"
+                sizes="(min-width: 1024px) 25vw, 50vw"
+              />
+            ) : (
+              <div className="absolute inset-0 bg-surface" />
+            )}
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
             <span className="absolute bottom-4 left-4 text-xs font-medium tracking-[0.15em] text-foreground">
               {tile.label}

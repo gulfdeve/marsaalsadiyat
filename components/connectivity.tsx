@@ -1,8 +1,9 @@
 import { MapPin } from "lucide-react";
-import { connectivity } from "@/lib/content";
+import { getSiteContent } from "@/lib/content";
 import { Reveal } from "./reveal";
 
-export function Connectivity() {
+export async function Connectivity() {
+  const { connectivity } = await getSiteContent();
   return (
     <section id="connectivity" className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">

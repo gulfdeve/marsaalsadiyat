@@ -1,0 +1,384 @@
+{
+  "meta": {
+    "title": "Marsa Al Saadiyat Abu Dhabi | Waterfront Residences",
+    "description": "Register your interest in Marsa Al Saadiyat by Aldar on Saadiyat Island, Abu Dhabi. Explore private mansions, luxury villas, waterfront apartments and branded residences."
+  },
+  "nav": [
+    {
+      "label": "VISION",
+      "href": "#vision"
+    },
+    {
+      "label": "LIFESTYLE",
+      "href": "#lifestyle"
+    },
+    {
+      "label": "MASTERPLAN",
+      "href": "#masterplan"
+    },
+    {
+      "label": "RESIDENCES",
+      "href": "#residences"
+    },
+    {
+      "label": "INVEST",
+      "href": "#invest"
+    },
+    {
+      "label": "CONNECTIVITY",
+      "href": "#connectivity"
+    }
+  ],
+  "hero": {
+    "eyebrow": "NEWLY ANNOUNCED · SAADIYAT ISLAND, ABU DHABI",
+    "titleLead": "Marsa Al Saadiyat Abu Dhabi ",
+    "titleLine2": "Aldar Waterfront Residences",
+    "body": "A landmark AED 100 billion waterfront destination on Saadiyat Island — a 6.4 million sqm masterplan of private mansions, luxury villas, waterfront apartments and branded residences along an 8km waterfront with Abu Dhabi's largest marina."
+  },
+  "vision": {
+    "eyebrow": "THE VISION",
+    "title": "The Next Chapter Of Saadiyat Island's Evolution",
+    "body": "An integrated destination across approximately 6.4 million square metres, weaving mansions, villas, apartments and branded residences alongside beaches, marina facilities, a theatre district, schools and healthcare into one walkable waterfront community for more than 58,000 residents.",
+    "stats": [
+      {
+        "icon": "waves",
+        "value": 8,
+        "decimals": 0,
+        "unit": "KM",
+        "prefix": "",
+        "caption": "WATERFRONT"
+      },
+      {
+        "icon": "sun",
+        "value": 5.6,
+        "decimals": 1,
+        "unit": "KM",
+        "prefix": "",
+        "caption": "BEACH"
+      },
+      {
+        "icon": "footprints",
+        "value": 140,
+        "decimals": 0,
+        "unit": "KM",
+        "prefix": "",
+        "caption": "WALKING TRAILS"
+      },
+      {
+        "icon": "bike",
+        "value": 46,
+        "decimals": 0,
+        "unit": "KM",
+        "prefix": "",
+        "caption": "CYCLING TRACK"
+      },
+      {
+        "icon": "gem",
+        "value": 100,
+        "decimals": 0,
+        "unit": "B",
+        "prefix": "AED ",
+        "caption": "MASTER DEVELOPMENT"
+      }
+    ]
+  },
+  "lifestyle": {
+    "eyebrow": "WATERFRONT LIFESTYLE",
+    "title": "A Destination Built Around The Water",
+    "body": "From beaches and promenade dining to marina living and luxury hospitality, Marsa Al Saadiyat is designed as a continuous waterfront experience — a one-kilometre promenade lined with retail and dining connects the beaches to the marina and yacht club.",
+    "cards": [
+      {
+        "title": "Beaches & promenade",
+        "body": "Approximately 5.6km of beaches and a 1km waterfront promenade"
+      },
+      {
+        "title": "Marina living",
+        "body": "Abu Dhabi's largest marina with a dedicated yacht club"
+      },
+      {
+        "title": "Luxury hospitality",
+        "body": "Two luxury hotels anchoring the wider hospitality offering"
+      },
+      {
+        "title": "Cultural district",
+        "body": "Saadiyat's museums and theatre district minutes away"
+      }
+    ]
+  },
+  "masterplan": {
+    "eyebrow": "MASTERPLAN & COMMUNITY VISION",
+    "title": "An Integrated, Walkable Waterfront Community",
+    "body": "Select a numbered point on the illustrative masterplan to explore each planned zone. Final layout is subject to official confirmation.",
+    "legend": [
+      {
+        "icon": "square",
+        "label": "WATERFRONT RESIDENCES"
+      },
+      {
+        "icon": "triangle",
+        "label": "MARINA & YACHT CLUB"
+      },
+      {
+        "icon": "shopping-bag",
+        "label": "RETAIL & DINING"
+      },
+      {
+        "icon": "leaf",
+        "label": "PARKS & OPEN SPACES"
+      },
+      {
+        "icon": "waves",
+        "label": "BEACHES"
+      },
+      {
+        "icon": "globe",
+        "label": "CULTURAL & COMMUNITY"
+      },
+      {
+        "icon": "lightbulb",
+        "label": "HOTELS & RESORTS"
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "marina",
+        "x": 62,
+        "y": 32,
+        "title": "Marina & Yacht Club",
+        "body": "Abu Dhabi's largest marina with a dedicated yacht club."
+      },
+      {
+        "id": "residential",
+        "x": 40,
+        "y": 45,
+        "title": "Residential Neighbourhoods",
+        "body": "Private mansions, luxury villas, waterfront apartments and branded residences."
+      },
+      {
+        "id": "theatre",
+        "x": 85,
+        "y": 55,
+        "title": "Theatre District",
+        "body": "A dedicated cultural and performance district minutes from the coast."
+      },
+      {
+        "id": "beachfront",
+        "x": 30,
+        "y": 68,
+        "title": "Beachfront & Promenade",
+        "body": "5.6km of beaches connected by a one-kilometre waterfront promenade."
+      },
+      {
+        "id": "park",
+        "x": 20,
+        "y": 20,
+        "title": "Landscaped Central Park",
+        "body": "A landscaped central park woven through the residential neighbourhoods."
+      },
+      {
+        "id": "schools",
+        "x": 55,
+        "y": 15,
+        "title": "Schools & Healthcare",
+        "body": "Community schools and healthcare facilities within walking distance."
+      }
+    ]
+  },
+  "residences": {
+    "eyebrow": "RESIDENCES",
+    "title": "Four Ways To Call The Waterfront Home",
+    "body": "Private mansions, luxury villas, waterfront apartments and branded residences. Layouts, sizes and pricing have not yet been released. Illustrative imagery.",
+    "tiles": [
+      {
+        "id": "mansions",
+        "label": "PRIVATE MANSIONS",
+        "span": "tall"
+      },
+      {
+        "id": "villas",
+        "label": "LUXURY VILLAS",
+        "span": "normal"
+      },
+      {
+        "id": "apartments",
+        "label": "WATERFRONT APARTMENTS",
+        "span": "tall"
+      },
+      {
+        "id": "branded",
+        "label": "BRANDED RESIDENCES",
+        "span": "normal"
+      },
+      {
+        "id": "beaches",
+        "label": "BEACHES",
+        "span": "normal"
+      },
+      {
+        "id": "dining",
+        "label": "PROMENADE DINING",
+        "span": "normal"
+      },
+      {
+        "id": "marina",
+        "label": "MARINA & YACHT CLUB",
+        "span": "normal"
+      },
+      {
+        "id": "park",
+        "label": "CENTRAL PARK",
+        "span": "normal"
+      }
+    ]
+  },
+  "story": {
+    "eyebrow": "THE STORY",
+    "title": "Experience Marsa Al Saadiyat"
+  },
+  "invest": {
+    "eyebrow": "WHY INVEST IN MARSA AL SAADIYAT",
+    "title": "A Landmark Scale, In A Location That Cannot Be Replicated",
+    "body": "Marsa Al Saadiyat combines a landmark development track record with one of Abu Dhabi's most limited waterfront settings.",
+    "cards": [
+      {
+        "icon": "gem",
+        "title": "Landmark AED 100 Billion Scale",
+        "body": "One of Abu Dhabi's most significant waterfront and mixed-use developments announced to date."
+      },
+      {
+        "icon": "anchor",
+        "title": "Prime Saadiyat Island Waterfront",
+        "body": "Positioned alongside Saadiyat's established cultural and residential district."
+      },
+      {
+        "icon": "building-2",
+        "title": "Experienced Master Developer",
+        "body": "Delivered by an established, listed real estate developer."
+      },
+      {
+        "icon": "sparkles",
+        "title": "Limited Waterfront Land",
+        "body": "An 8km waterfront setting on an island with finite coastal frontage."
+      },
+      {
+        "icon": "users",
+        "title": "Diverse Residential Offering",
+        "body": "Mansions, villas, apartments and branded residences within one destination."
+      },
+      {
+        "icon": "compass",
+        "title": "Marina, Hospitality & Retail",
+        "body": "Abu Dhabi's largest marina, two luxury hotels and a waterfront promenade."
+      },
+      {
+        "icon": "trending-up",
+        "title": "Future Transport Connectivity",
+        "body": "A planned underground Etihad Rail station and new road, tunnel and bridge links."
+      },
+      {
+        "icon": "landmark",
+        "title": "Abu Dhabi's Long-Term Growth",
+        "body": "Positioned to appeal to both local and international buyers over the long term."
+      }
+    ]
+  },
+  "connectivity": {
+    "eyebrow": "CONNECTIVITY",
+    "title": "Anchored On Saadiyat Island, Connected To All Of Abu Dhabi",
+    "body": "A planned underground Etihad Rail high-speed station, plus new road, tunnel and bridge connections toward Reem Island and Umm Yifeenah Island, place the destination within reach of the wider UAE.",
+    "places": [
+      {
+        "name": "Louvre Abu Dhabi",
+        "tag": "CULTURAL DISTRICT"
+      },
+      {
+        "name": "Zayed National Museum",
+        "tag": "CULTURAL DISTRICT"
+      },
+      {
+        "name": "Guggenheim Abu Dhabi",
+        "tag": "CULTURAL DISTRICT"
+      },
+      {
+        "name": "teamLab Phenomena Abu Dhabi",
+        "tag": "CULTURAL DISTRICT"
+      },
+      {
+        "name": "Underground Etihad Rail Station",
+        "tag": "PLANNED"
+      },
+      {
+        "name": "Roads, Tunnel & Bridge Links",
+        "tag": "PLANNED"
+      }
+    ]
+  },
+  "timeline": {
+    "eyebrow": "REGISTRATION TIMELINE",
+    "title": "Where Marsa Al Saadiyat Stands Today",
+    "body": "All dates below are expected and planned, subject to official confirmation.",
+    "phases": [
+      {
+        "phase": "01",
+        "title": "Announced — 2026",
+        "body": "Project launch witnessed with an investment value of AED 100 billion."
+      },
+      {
+        "phase": "02",
+        "title": "Priority Registration — Open Now",
+        "body": "Register interest to receive project updates ahead of public launch."
+      },
+      {
+        "phase": "03",
+        "title": "First Residential Sales — Expected H2 2026",
+        "body": "First residential sales expected to launch."
+      },
+      {
+        "phase": "04",
+        "title": "Future Phases — To Be Announced",
+        "body": "Further residential phases and details subject to future announcement."
+      }
+    ]
+  },
+  "amenities": {
+    "eyebrow": "BEACHES, PARKS & OUTDOOR LIVING",
+    "title": "Coastal Wellness, Built Into Everyday Life",
+    "body": "Marsa Al Saadiyat is planned around movement, nature and walkable access to daily amenities.",
+    "items": [
+      "5.6 KM of Beaches",
+      "Landscaped Central Park",
+      "140 KM Walking Paths",
+      "46 KM Cycling Routes",
+      "Outdoor Swimming Pools",
+      "Sports Facilities",
+      "Community Clubhouses",
+      "Walkable Daily Amenities"
+    ]
+  },
+  "registerForm": {
+    "eyebrow": "SPEAK TO A PROPERTY CONSULTANT",
+    "title": "Join The Priority Registration List",
+    "body": "Register today to receive project information, priority updates and early notice ahead of the first residential sales launch expected in the second half of 2026. No obligation, no cost.",
+    "budgets": [
+      "AED 2M – 5M",
+      "AED 5M – 10M",
+      "AED 10M – 20M",
+      "AED 20M+"
+    ],
+    "purposes": [
+      "Investment",
+      "End User"
+    ]
+  },
+  "finalCta": {
+    "title": "Ready To Register?",
+    "body": "Share a few details and a dedicated property consultant will be in touch with project information and priority updates."
+  },
+  "footer": {
+    "brand": "MARSA"
+  },
+  "customTags": {
+    "head": "<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:title\" content=\"Marsa Al Saadiyat by Aldar | Saadiyat Island Waterfront Residences\">\n<meta property=\"og:description\" content=\"Register your interest in Marsa Al Saadiyat by Aldar on Saadiyat Island, Abu Dhabi. Explore private mansions, luxury villas, waterfront apartments and branded residences.\">\n<meta property=\"og:url\" content=\"https://www.marsasaadiyat.ae/\">\n<meta property=\"og:image\" content=\"https://www.marsasaadiyat.ae/_next/static/immutable/media/PRIVATE%20MANSIONS.10s1k8z-2f36s.webp\">\n<meta property=\"og:image:alt\" content=\"Modern luxury mansion at Marsa Al Saadiyat with beach view at sunset\">\n<meta property=\"og:site_name\" content=\"Marsa Al Saadiyat by Aldar\">\n\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<meta name=\"twitter:title\" content=\"Marsa Al Saadiyat by Aldar | Saadiyat Island Waterfront Residences\">\n<meta name=\"twitter:description\" content=\"Register your interest in Marsa Al Saadiyat by Aldar on Saadiyat Island, Abu Dhabi. Explore private mansions, luxury villas, waterfront apartments and branded residences.\">\n<meta name=\"twitter:image\" content=\"https://www.marsasaadiyat.ae/_next/static/immutable/media/PRIVATE%20MANSIONS.10s1k8z-2f36s.webp\">\n<meta name=\"twitter:image:alt\" content=\"Modern luxury mansion at Marsa Al Saadiyat with beach view at sunset\">\n\n\n<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebSite\",\n      \"@id\": \"https://www.marsasaadiyat.ae/#website\",\n      \"url\": \"https://www.marsasaadiyat.ae/\",\n      \"name\": \"Marsa Al Saadiyat by Aldar\",\n      \"description\": \"Marsa Al Saadiyat by Aldar is a waterfront destination on Saadiyat Island, Abu Dhabi, featuring private mansions, luxury villas, waterfront apartments and branded residences.\",\n      \"inLanguage\": \"en-AE\",\n      \"publisher\": {\n        \"@id\": \"https://www.marsasaadiyat.ae/#organization\"\n      }\n    },\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://www.marsasaadiyat.ae/#webpage\",\n      \"url\": \"https://www.marsasaadiyat.ae/\",\n      \"name\": \"Marsa Al Saadiyat by Aldar Abu Dhabi | Saadiyat Island Waterfront Residences\",\n      \"description\": \"Register your interest in Marsa Al Saadiyat by Aldar on Saadiyat Island, Abu Dhabi. Explore private mansions, luxury villas, waterfront apartments and branded residences.\",\n      \"isPartOf\": {\n        \"@id\": \"https://www.marsasaadiyat.ae/#website\"\n      },\n      \"about\": {\n        \"@id\": \"https://www.marsasaadiyat.ae/#project\"\n      },\n      \"primaryImageOfPage\": {\n        \"@type\": \"ImageObject\",\n        \"url\": \"https://www.marsasaadiyat.ae/_next/static/immutable/media/PRIVATE%20MANSIONS.10s1k8z-2f36s.webp\"\n      },\n      \"inLanguage\": \"en-AE\"\n    },\n    {\n      \"@type\": \"VideoObject\",\n      \"@id\": \"https://www.marsasaadiyat.ae/#video\",\n      \"name\": \"Marsa Al Saadiyat by Aldar | Abu Dhabi\",\n      \"description\": \"Explore Marsa Al Saadiyat by Aldar on Saadiyat Island, Abu Dhabi, featuring private mansions, luxury villas, waterfront apartments and branded residences.\",\n      \"contentUrl\": \"https://www.marsasaadiyat.ae/Saadiyat%20Island%20New%20Video%20girl.mp4\",\n      \"isPartOf\": {\n        \"@id\": \"https://www.marsasaadiyat.ae/#webpage\"\n      },\n      \"inLanguage\": \"en-AE\"\n    },\n    {\n      \"@type\": \"Organization\",\n      \"@id\": \"https://www.marsasaadiyat.ae/#organization\",\n      \"name\": \"Marsa Al Saadiyat by Aldar\",\n      \"url\": \"https://www.marsasaadiyat.ae/\",\n      \"description\": \"Marsa Al Saadiyat is a waterfront residential destination by Aldar on Saadiyat Island, Abu Dhabi.\"\n    },\n    {\n      \"@type\": \"Place\",\n      \"@id\": \"https://www.marsasaadiyat.ae/#project\",\n      \"name\": \"Marsa Al Saadiyat by Aldar\",\n      \"alternateName\": [\n        \"Marsa Al Saadiyat\",\n        \"Marsa Al Saadiyat Abu Dhabi\"\n      ],\n      \"description\": \"Marsa Al Saadiyat by Aldar is a waterfront destination on Saadiyat Island, Abu Dhabi, bringing together private mansions, luxury villas, waterfront apartments and branded residences with beaches, marina facilities, landscaped communities and lifestyle amenities.\",\n      \"url\": \"https://www.marsasaadiyat.ae/\",\n      \"image\": \"https://www.marsasaadiyat.ae/_next/static/immutable/media/PRIVATE%20MANSIONS.10s1k8z-2f36s.webp\",\n      \"location\": {\n        \"@id\": \"https://www.marsasaadiyat.ae/#location\"\n      },\n      \"address\": {\n        \"@type\": \"PostalAddress\",\n        \"addressLocality\": \"Abu Dhabi\",\n        \"addressRegion\": \"Abu Dhabi\",\n        \"addressCountry\": \"AE\"\n      },\n      \"geo\": {\n        \"@type\": \"GeoCoordinates\",\n        \"latitude\": 24.52600702757084,\n        \"longitude\": 54.43314347004701\n      }\n    },\n    {\n      \"@type\": \"Place\",\n      \"@id\": \"https://www.marsasaadiyat.ae/#location\",\n      \"name\": \"Marsa Al Saadiyat, Saadiyat Island\",\n      \"address\": {\n        \"@type\": \"PostalAddress\",\n        \"addressLocality\": \"Abu Dhabi\",\n        \"addressRegion\": \"Abu Dhabi\",\n        \"addressCountry\": \"AE\"\n      },\n      \"geo\": {\n        \"@type\": \"GeoCoordinates\",\n        \"latitude\": 24.52600702757084,\n        \"longitude\": 54.43314347004701\n      },\n      \"containedInPlace\": {\n        \"@type\": \"Place\",\n        \"name\": \"Saadiyat Island\"\n      }\n    },\n    {\n      \"@type\": \"Organization\",\n      \"@id\": \"https://www.marsasaadiyat.ae/#developer\",\n      \"name\": \"Aldar Properties\",\n      \"description\": \"Aldar Properties is the developer of Marsa Al Saadiyat.\"\n    },\n    {\n      \"@type\": \"ItemList\",\n      \"@id\": \"https://www.marsasaadiyat.ae/#residences\",\n      \"name\": \"Marsa Al Saadiyat Residential Categories\",\n      \"itemListElement\": [\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 1,\n          \"name\": \"Private Mansions\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 2,\n          \"name\": \"Luxury Villas\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 3,\n          \"name\": \"Waterfront Apartments\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 4,\n          \"name\": \"Branded Residences\"\n        }\n      ]\n    },\n    {\n      \"@type\": \"BreadcrumbList\",\n      \"@id\": \"https://www.marsasaadiyat.ae/#breadcrumb\",\n      \"itemListElement\": [\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 1,\n          \"name\": \"Home\",\n          \"item\": \"https://www.marsasaadiyat.ae/\"\n        }\n      ]\n    }\n  ]\n}\n</script>\nFAQ SCHEMA \n\n<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"FAQPage\",\n  \"mainEntity\": [\n    {\n      \"@type\": \"Question\",\n      \"name\": \"What is Marsa Al Saadiyat?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Marsa Al Saadiyat is an AED 100 billion waterfront destination by Aldar on Saadiyat Island, Abu Dhabi. The masterplan is designed around luxury residences, beaches, a marina, cultural destinations and community amenities.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"What was Marsa Al Saadiyat previously called?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"The development was previously known as Saadiyat Marina District before being renamed Marsa Al Saadiyat in July 2026.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Who is the developer of Marsa Al Saadiyat?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Aldar is the master developer, responsible for the overall design and delivery of the project's primary infrastructure. First residential sales are expected to commence in H2 2026.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Where is the development located?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Marsa Al Saadiyat is located on Saadiyat Island, Abu Dhabi, UAE, within the wider Saadiyat Island destination. A scenic walkway is planned to connect the development directly with Saadiyat Cultural District.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"What is the current development status?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"The project has been officially launched and is currently progressing toward its first residential sales. Aldar has announced that sales of the first homes are expected to commence in H2 2026, with site enabling and infrastructure works expected to begin in Q3 2026.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"What types of properties are planned?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"The announced residential offering includes private mansions, luxury villas, waterfront apartments and branded residences, alongside a separate hillside community of standalone villas.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"How large is the Marsa Al Saadiyat masterplan?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"The masterplan covers approximately 6.4 million square metres and extends across an 8-kilometre waterfront, including 5.6 kilometres of natural beaches. The destination is planned to accommodate more than 58,000 residents.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"What amenities are planned?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Planned amenities include beaches, a waterfront promenade, a marina, yacht club, parks, cycling and walking paths, retail, dining, hospitality, schools and cultural destinations. Explore the Marsa Al Saadiyat masterplan for more details.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Will the development have a marina and waterfront promenade?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Yes. The masterplan includes Abu Dhabi's largest marina, with capacity for up to 350 berths, together with an approximately 1-kilometre waterfront promenade featuring retail and dining.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Will there be schools and healthcare facilities?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Yes. The masterplan includes schools, premium healthcare facilities, parks, community clubhouses, outdoor pools and sports courts. Aldar's current information also identifies 2 private schools, 1 public school and 6 nurseries close to the destination.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Have property prices and payment plans been announced?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Official starting prices and payment plans for the first residential releases have not yet been publicly announced. Pricing and payment terms are expected to vary by property type and individual residential project.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"What makes Marsa Al Saadiyat different from other Saadiyat Island developments?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"The destination combines a large-scale waterfront masterplan with four residential categories: private mansions, luxury villas, waterfront apartments and branded residences. Its 8-kilometre waterfront, marina, natural beaches, cultural connections and integrated community amenities give it a distinct position within the wider Saadiyat Island destination.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"How can I register interest in Marsa Al Saadiyat?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Complete the registration form on this website to request updates about official prices, floor plans, property types, payment plans and availability when released by Aldar.\"\n      }\n    }\n  ]\n}\n</script>\n",
+    "body": ""
+  }
+}

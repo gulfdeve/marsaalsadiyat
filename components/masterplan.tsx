@@ -4,12 +4,13 @@ import { useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { Plus } from "lucide-react";
-import { masterplan } from "@/lib/content";
+import { useSiteContent } from "@/components/site-content-provider";
 import { iconMap } from "@/lib/icon-map";
 import { Reveal } from "./reveal";
 import masterplanImg from "@/public/marsa-al-saadiyat-g1.avif";
 
 export function Masterplan() {
+  const { masterplan } = useSiteContent();
   const [active, setActive] = useState<string | null>(null);
   const activeHotspot = masterplan.hotspots.find((h) => h.id === active);
 
@@ -27,7 +28,7 @@ export function Masterplan() {
         <div className="relative grid grid-cols-1 lg:grid-cols-[220px_1fr]">
           <div className="flex flex-col gap-4 bg-surface p-6 lg:p-8">
             {masterplan.legend.map((item) => {
-              const Icon = iconMap[item.icon];
+              const Icon = iconMap[item.icon] ?? iconMap.square;
               return (
                 <div key={item.label} className="flex items-center gap-3">
                   <Icon size={16} strokeWidth={1.5} className="shrink-0 text-gold" />

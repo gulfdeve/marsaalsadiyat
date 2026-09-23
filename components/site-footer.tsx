@@ -1,7 +1,8 @@
 import { Share2, AtSign, Link2 } from "lucide-react";
-import { footer } from "@/lib/content";
+import { getSiteContent } from "@/lib/content";
 
-export function SiteFooter() {
+export async function SiteFooter() {
+  const { footer } = await getSiteContent();
   return (
     <footer className="border-t border-border-hairline">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 py-12 sm:flex-row sm:justify-between">

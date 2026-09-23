@@ -3,9 +3,10 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useScroll, useReducedMotion } from "motion/react";
 import { Menu, X } from "lucide-react";
-import { nav } from "@/lib/content";
+import { useSiteContent } from "@/components/site-content-provider";
 
 export function SiteHeader() {
+  const { nav, footer } = useSiteContent();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { scrollYProgress } = useScroll();
@@ -37,7 +38,7 @@ export function SiteHeader() {
             href="#"
             className={`font-serif text-xl tracking-[0.25em] transition-colors ${onLight ? "text-foreground" : "text-white"}`}
           >
-            MARSA
+            {footer.brand}
           </a>
 
           <nav className="hidden items-center gap-8 lg:flex">
