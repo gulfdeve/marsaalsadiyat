@@ -5,6 +5,7 @@ import Link from "next/link";
 import { defaultSiteContent, type SiteContent } from "@/lib/site-content";
 import { iconMap } from "@/lib/icon-map";
 import { logoutAdmin, saveSiteContentAction } from "./actions";
+import { FormattedField } from "./formatted-field";
 
 const SECTIONS: { id: keyof SiteContent; label: string }[] = [
   { id: "meta", label: "SEO" },
@@ -171,7 +172,7 @@ export function ContentEditor({
               ? persistence.github
                 ? "On Vercel, saves write content/site.json in GitHub. The live site reads that file immediately."
                 : "This Vercel deployment cannot keep local file writes. Add GITHUB_TOKEN in Vercel project settings so /admin can update content/site.json in the repo."
-              : "Saved values live in content/site.json."}
+              : "Saved values live in content/site.json. No database is used."}
           </p>
           {!persistence.ready && (
             <p className="mt-4 text-sm text-red-400">
@@ -294,26 +295,40 @@ function ValueEditor({
       );
     }
 
+    const plainLeaf = ["href", "id", "icon", "span", "unit", "prefix"].includes(leaf);
+    if (plainLeaf || path[0] === "meta") {
+      const multiline = value.length > 80 || ["body", "description"].includes(leaf);
+      return (
+        <label className="block">
+          <span className="text-[11px] tracking-[0.2em] text-muted-foreground">{label}</span>
+          {multiline ? (
+            <textarea
+              value={value}
+              rows={4}
+              onChange={(event) => onChange(path, event.target.value)}
+              className="mt-2 w-full resize-y border-b border-input-hairline bg-transparent py-2.5 text-base leading-relaxed text-foreground outline-none focus:border-gold"
+            />
+          ) : (
+            <input
+              type="text"
+              value={value}
+              onChange={(event) => onChange(path, event.target.value)}
+              className="mt-2 w-full border-b border-input-hairline bg-transparent py-2.5 text-base text-foreground outline-none focus:border-gold"
+            />
+          )}
+        </label>
+      );
+    }
+
     const multiline = value.length > 80 || ["body", "description"].includes(leaf);
     return (
-      <label className="block">
-        <span className="text-[11px] tracking-[0.2em] text-muted-foreground">{label}</span>
-        {multiline ? (
-          <textarea
-            value={value}
-            rows={4}
-            onChange={(event) => onChange(path, event.target.value)}
-            className="mt-2 w-full resize-y border-b border-input-hairline bg-transparent py-2.5 text-base leading-relaxed text-foreground outline-none focus:border-gold"
-          />
-        ) : (
-          <input
-            type="text"
-            value={value}
-            onChange={(event) => onChange(path, event.target.value)}
-            className="mt-2 w-full border-b border-input-hairline bg-transparent py-2.5 text-base text-foreground outline-none focus:border-gold"
-          />
-        )}
-      </label>
+      <FormattedField
+        key={path.join(".")}
+        label={label}
+        value={value}
+        multiline={multiline}
+        onChange={(next) => onChange(path, next)}
+      />
     );
   }
 

@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import IntlTelInput from "@intl-tel-input/react";
 import "intl-tel-input/styles";
+import { FormattedText } from "@/components/formatted-text";
 import { useSiteContent } from "@/components/site-content-provider";
 import { PHONE_COUNTRIES } from "@/lib/phone-codes";
 import { validateRegistration, type RegistrationErrors } from "@/lib/validate-registration";
@@ -231,7 +232,7 @@ function PillOption({
           : "border-input-hairline text-foreground hover:border-gold/60"
       }`}
     >
-      {label}
+      <FormattedText html={label} />
     </button>
   );
 }

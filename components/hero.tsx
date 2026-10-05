@@ -5,7 +5,8 @@ import { motion, useScroll, useTransform, useReducedMotion } from "motion/react"
 import { useRef } from "react";
 import { Play } from "lucide-react";
 import { useSiteContent } from "@/components/site-content-provider";
-import heroImg from "@/public/TOP PAGE.webp";
+import { FormattedText } from "@/components/formatted-text";
+import heroImg from "@/public/hero-top.webp";
 
 export function Hero() {
   const { hero } = useSiteContent();
@@ -35,7 +36,7 @@ export function Hero() {
           transition={{ duration: 0.6 }}
           className="text-xs tracking-[0.3em] text-gold"
         >
-          {hero.eyebrow}
+          <FormattedText html={hero.eyebrow} />
         </motion.p>
 
         <motion.h1
@@ -44,9 +45,9 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="mt-6 font-serif text-5xl leading-[1.05] tracking-[-0.02em] text-white sm:text-6xl md:text-7xl lg:text-[5.1rem]"
         >
-          {hero.titleLead}
+          <FormattedText html={hero.titleLead} />
           <br />
-          {hero.titleLine2}
+          <FormattedText html={hero.titleLine2} />
         </motion.h1>
 
         <motion.p
@@ -55,7 +56,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mt-6 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg"
         >
-          {hero.body}
+          <FormattedText html={hero.body} />
         </motion.p>
 
         <motion.div

@@ -4,6 +4,8 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { Play, X } from "lucide-react";
+import { FormattedText } from "@/components/formatted-text";
+import { plainTextFromHtml } from "@/lib/formatted-html";
 import { useSiteContent } from "@/components/site-content-provider";
 import { Reveal } from "./reveal";
 import nightImg from "@/public/images/night.jpg";
@@ -30,9 +32,11 @@ export function StoryVideo() {
       <div className="absolute inset-0" style={{ background: "var(--gradient-veil)" }} />
 
       <Reveal className="relative z-10 flex flex-col items-center px-6 text-center">
-        <p className="text-xs tracking-[0.3em] text-gold">{story.eyebrow}</p>
+        <p className="text-xs tracking-[0.3em] text-gold">
+          <FormattedText html={story.eyebrow} />
+        </p>
         <h2 className="mt-4 font-serif text-4xl leading-tight text-white sm:text-5xl">
-          {story.title}
+          <FormattedText html={story.title} />
         </h2>
         <button
           ref={triggerRef}
@@ -49,7 +53,7 @@ export function StoryVideo() {
           <motion.div
             role="dialog"
             aria-modal="true"
-            aria-label={story.title}
+            aria-label={plainTextFromHtml(story.title)}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -73,7 +77,7 @@ export function StoryVideo() {
                 <X size={22} />
               </button>
               <video
-                src="/Saadiyat Island New Video girl.mp4"
+                src="/story-video.mp4"
                 controls
                 autoPlay
                 muted

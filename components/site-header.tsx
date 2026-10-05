@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useScroll, useReducedMotion } from "motion/react";
 import { Menu, X } from "lucide-react";
+import { FormattedText } from "@/components/formatted-text";
 import { useSiteContent } from "@/components/site-content-provider";
 
 export function SiteHeader() {
@@ -38,7 +39,7 @@ export function SiteHeader() {
             href="#"
             className={`font-serif text-xl tracking-[0.25em] transition-colors ${onLight ? "text-foreground" : "text-white"}`}
           >
-            {footer.brand}
+            <FormattedText html={footer.brand} />
           </a>
 
           <nav className="hidden items-center gap-8 lg:flex">
@@ -50,7 +51,7 @@ export function SiteHeader() {
                   scrolled ? "text-muted-foreground" : "text-white/80"
                 }`}
               >
-                {item.label}
+                <FormattedText html={item.label} />
               </a>
             ))}
           </nav>
@@ -97,7 +98,7 @@ export function SiteHeader() {
                   onClick={() => setMenuOpen(false)}
                   className="font-serif text-2xl text-foreground"
                 >
-                  {item.label}
+                  <FormattedText html={item.label} />
                 </a>
               ))}
               <a

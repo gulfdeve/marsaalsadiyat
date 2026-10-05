@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FormattedText } from "@/components/formatted-text";
 import { getSiteContent } from "@/lib/content";
 import { Reveal } from "./reveal";
 import { RegisterForm } from "./register-form";
@@ -20,13 +21,17 @@ export async function RegisterSection() {
 
       <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 lg:grid-cols-2 lg:gap-16">
         <Reveal>
-          <p className="text-xs tracking-[0.3em] text-gold">{registerForm.eyebrow}</p>
-          <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground sm:text-5xl">
-            {registerForm.title}
-          </h2>
-          <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground">
-            {registerForm.body}
+          <p className="text-xs tracking-[0.3em] text-gold">
+            <FormattedText html={registerForm.eyebrow} />
           </p>
+          <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground sm:text-5xl">
+            <FormattedText html={registerForm.title} />
+          </h2>
+          <FormattedText
+            as="div"
+            className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground"
+            html={registerForm.body}
+          />
         </Reveal>
 
         <Reveal delay={0.1}>

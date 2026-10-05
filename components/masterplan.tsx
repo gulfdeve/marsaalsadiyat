@@ -4,6 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { Plus } from "lucide-react";
+import { FormattedText } from "@/components/formatted-text";
+import { plainTextFromHtml } from "@/lib/formatted-html";
 import { useSiteContent } from "@/components/site-content-provider";
 import { iconMap } from "@/lib/icon-map";
 import { Reveal } from "./reveal";
@@ -17,11 +19,17 @@ export function Masterplan() {
   return (
     <section id="masterplan" className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
       <Reveal className="mx-auto max-w-3xl text-center">
-        <p className="text-xs tracking-[0.3em] text-gold">{masterplan.eyebrow}</p>
+        <p className="text-xs tracking-[0.3em] text-gold">
+          <FormattedText html={masterplan.eyebrow} />
+        </p>
         <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground sm:text-5xl">
-          {masterplan.title}
+          <FormattedText html={masterplan.title} />
         </h2>
-        <p className="mt-6 text-base leading-relaxed text-muted-foreground">{masterplan.body}</p>
+        <FormattedText
+          as="div"
+          className="mt-6 text-base leading-relaxed text-muted-foreground"
+          html={masterplan.body}
+        />
       </Reveal>
 
       <Reveal className="mt-16 overflow-hidden rounded-luxe border border-border-hairline">
@@ -33,7 +41,7 @@ export function Masterplan() {
                 <div key={item.label} className="flex items-center gap-3">
                   <Icon size={16} strokeWidth={1.5} className="shrink-0 text-gold" />
                   <span className="text-[11px] tracking-[0.1em] text-muted-foreground">
-                    {item.label}
+                    <FormattedText html={item.label} />
                   </span>
                 </div>
               );
@@ -52,7 +60,7 @@ export function Masterplan() {
             {masterplan.hotspots.map((hotspot) => (
               <button
                 key={hotspot.id}
-                aria-label={hotspot.title}
+                aria-label={plainTextFromHtml(hotspot.title)}
                 onClick={() => setActive(active === hotspot.id ? null : hotspot.id)}
                 style={{ left: `${hotspot.x}%`, top: `${hotspot.y}%` }}
                 className="absolute -translate-x-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full border border-gold/60 bg-background/70 text-gold backdrop-blur-sm transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold motion-safe:animate-pulse"
@@ -74,10 +82,14 @@ export function Masterplan() {
                   }}
                   className="absolute z-10 w-64 rounded-luxe border border-gold/40 bg-background/95 p-4 shadow-luxe backdrop-blur-sm"
                 >
-                  <h3 className="font-serif text-lg text-foreground">{activeHotspot.title}</h3>
-                  <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-                    {activeHotspot.body}
-                  </p>
+                  <h3 className="font-serif text-lg text-foreground">
+                    <FormattedText html={activeHotspot.title} />
+                  </h3>
+                  <FormattedText
+                    as="div"
+                    className="mt-1 text-xs leading-relaxed text-muted-foreground"
+                    html={activeHotspot.body}
+                  />
                 </motion.div>
               )}
             </AnimatePresence>

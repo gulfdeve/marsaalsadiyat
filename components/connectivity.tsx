@@ -1,4 +1,5 @@
 import { MapPin } from "lucide-react";
+import { FormattedText } from "@/components/formatted-text";
 import { getSiteContent } from "@/lib/content";
 import { Reveal } from "./reveal";
 
@@ -9,13 +10,17 @@ export async function Connectivity() {
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
         <div>
           <Reveal>
-            <p className="text-xs tracking-[0.3em] text-gold">{connectivity.eyebrow}</p>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground sm:text-5xl">
-              {connectivity.title}
-            </h2>
-            <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-              {connectivity.body}
+            <p className="text-xs tracking-[0.3em] text-gold">
+              <FormattedText html={connectivity.eyebrow} />
             </p>
+            <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground sm:text-5xl">
+              <FormattedText html={connectivity.title} />
+            </h2>
+            <FormattedText
+              as="div"
+              className="mt-6 text-base leading-relaxed text-muted-foreground"
+              html={connectivity.body}
+            />
           </Reveal>
 
           <div className="mt-10 flex flex-col gap-px overflow-hidden rounded-luxe border border-border-hairline bg-border-hairline">
@@ -26,8 +31,12 @@ export async function Connectivity() {
                 className="flex items-center gap-3 bg-surface px-5 py-4"
               >
                 <MapPin size={16} strokeWidth={1.5} className="shrink-0 text-gold" />
-                <span className="flex-1 text-sm text-foreground">{place.name}</span>
-                <span className="text-[10px] tracking-[0.15em] text-gold">{place.tag}</span>
+                <span className="flex-1 text-sm text-foreground">
+                  <FormattedText html={place.name} />
+                </span>
+                <span className="text-[10px] tracking-[0.15em] text-gold">
+                  <FormattedText html={place.tag} />
+                </span>
               </Reveal>
             ))}
           </div>

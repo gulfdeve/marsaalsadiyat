@@ -100,6 +100,39 @@ body {
   }
 }
 
+.formatted-text a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+.formatted-text p {
+  margin: 0;
+}
+.formatted-text p + p {
+  margin-top: 0.7em;
+}
+.formatted-text ul,
+.formatted-text ol {
+  margin: 0.4em 0 0;
+  padding-left: 1.2em;
+}
+.formatted-text li + li {
+  margin-top: 0.2em;
+}
+.rich-field {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.rich-field ul,
+.rich-field ol {
+  margin: 0.35em 0;
+  padding-left: 1.2em;
+}
+.rich-field a {
+  color: var(--gold);
+  text-decoration: underline;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

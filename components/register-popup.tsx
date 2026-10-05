@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { X } from "lucide-react";
+import { FormattedText } from "@/components/formatted-text";
 import { useSiteContent } from "@/components/site-content-provider";
 import { RegisterForm } from "./register-form";
 
@@ -42,9 +43,11 @@ export function RegisterPopup() {
           <X size={18} strokeWidth={1.5} />
         </button>
 
-        <p className="pr-8 text-xs tracking-[0.3em] text-gold">{registerForm.eyebrow}</p>
+        <p className="pr-8 text-xs tracking-[0.3em] text-gold">
+          <FormattedText html={registerForm.eyebrow} />
+        </p>
         <h2 className="mt-3 pr-8 font-serif text-2xl leading-tight text-foreground sm:text-3xl">
-          {registerForm.title}
+          <FormattedText html={registerForm.title} />
         </h2>
 
         <div className="mt-6">
