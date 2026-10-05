@@ -42,21 +42,19 @@ export async function POST(request: Request) {
     port: Number(SMTP_PORT ?? 587),
     secure: SMTP_SECURE === "true",
     auth: { user: SMTP_USER, pass: SMTP_PASS },
+    connectionTimeout: 10_000,
+    greetingTimeout: 10_000,
+    socketTimeout: 15_000,
+    tls: {
+      // cPanel cert is issued to hostnames like webmail.gulfestates.ae, not the server IP.
+      servername: process.env.SMTP_TLS_SERVERNAME || SMTP_HOST,
+      rejectUnauthorized: false,
+    },
   });
 
   console.log(
     `[register] sending via ${SMTP_HOST}:${SMTP_PORT ?? 587} as ${SMTP_USER} → ${CONTACT_TO}`
   );
-
-  try {
-    await transporter.verify();
-  } catch (err) {
-    logSmtpError("SMTP connection/auth check failed", err);
-    return Response.json(
-      { message: "Could not send email right now. Please try again shortly." },
-      { status: 502 }
-    );
-  }
 
   try {
     const info = await transporter.sendMail({
@@ -85,12 +83,15 @@ export async function POST(request: Request) {
       `[register] sendMail resolved: messageId=${info.messageId} accepted=${JSON.stringify(info.accepted)} rejected=${JSON.stringify(info.rejected)} response=${info.response}`
     );
 
-    if (info.accepted.length === 0 || info.rejected.length > 0) {
-      console.error("[register] SMTP server did not fully accept the message — check the recipient address and spam filtering.", info);
+    if (info.accepted.length === 0) {
+      console.error("[register] SMTP server did not accept the message — check the recipient address and spam filtering.", info);
       return Response.json(
         { message: "Could not send email right now. Please try again shortly." },
         { status: 502 }
       );
+    }
+    if (info.rejected.length > 0) {
+      console.error("[register] SMTP rejected some recipients; others were accepted.", info);
     }
   } catch (err) {
     logSmtpError("Failed to send registration email", err);
