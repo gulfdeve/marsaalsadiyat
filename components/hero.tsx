@@ -16,7 +16,7 @@ export function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], [0, reduceMotion ? 0 : 150]);
 
   return (
-    <section ref={ref} className="relative flex h-screen min-h-[720px] items-center overflow-hidden">
+    <section ref={ref} className="relative flex min-h-svh flex-col overflow-hidden md:min-h-[720px]">
       <motion.div style={{ y }} className="absolute inset-0">
         <Image
           src={heroImg}
@@ -29,7 +29,7 @@ export function Hero() {
       </motion.div>
       <div className="absolute inset-0" style={{ background: "var(--gradient-veil)" }} />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-6 text-center">
+      <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-1 flex-col items-center px-6 pb-10 pt-32 text-center sm:pt-36 md:pt-40">
         <motion.p
           initial={reduceMotion ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -43,21 +43,25 @@ export function Hero() {
           initial={reduceMotion ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="mt-6 font-serif text-5xl leading-[1.05] tracking-[-0.02em] text-white sm:text-6xl md:text-7xl lg:text-[5.1rem]"
+          className="mt-6 font-serif text-4xl leading-[1.1] tracking-[-0.02em] text-white sm:text-5xl md:text-7xl lg:text-[5.1rem]"
         >
           <FormattedText html={hero.titleLead} />
           <br />
           <FormattedText html={hero.titleLine2} />
         </motion.h1>
 
-        <motion.p
+        <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="mt-6 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg"
+          className="mt-6 max-w-2xl"
         >
-          <FormattedText html={hero.body} />
-        </motion.p>
+          <FormattedText
+            as="div"
+            html={hero.body}
+            className="text-base leading-relaxed text-white/85 sm:text-lg"
+          />
+        </motion.div>
 
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 20 }}
@@ -84,7 +88,7 @@ export function Hero() {
           initial={reduceMotion ? false : { opacity: 0 }}
           animate={{ opacity: 1, y: reduceMotion ? 0 : [0, 8, 0] }}
           transition={{ opacity: { duration: 0.6, delay: 0.6 }, y: { duration: 1.8, repeat: Infinity, ease: "easeInOut" } }}
-          className="mt-16 flex flex-col items-center gap-2 text-xs tracking-[0.2em] text-white/70"
+          className="mt-auto flex flex-col items-center gap-2 pt-12 text-xs tracking-[0.2em] text-white/70"
         >
           SCROLL
           <span aria-hidden>⌄</span>
